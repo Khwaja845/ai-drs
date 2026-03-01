@@ -1,2 +1,6 @@
 import axios from "axios";
-export const getShap = (data:any)=>axios.post("http://127.0.0.1:8000/explain",data);
+
+const API_URL = import.meta.env.VITE_API_URL;
+
+export const getShap = (data: any) =>
+  axios.post(`${API_URL}/explain`, data);
