@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Reports() {
   return (
     <div className="flex flex-col items-center gap-8 mt-16">

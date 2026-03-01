@@ -3,7 +3,6 @@ import RiskGauge from "../components/charts/RiskGauge";
 import "../components/charts/GraphStyles.css";
 
 // You may need to get prediction from props, context, or state. Here is a functional component wrapper:
-import React from "react";
 
 export default function Dashboard({ prediction }: { prediction: any }) {
   // Convert SHAP values and features into the format RiskGauge expects

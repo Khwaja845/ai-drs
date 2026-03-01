@@ -13,9 +13,8 @@ type ManualFormData = {
   PhysActivity: number;
 };
 import ManualInputForm from "../components/forms/ManualInputForm";
-import LabReportUpload from "../components/forms/LabReportUpload";
 import Dashboard from "./Dashboard";
-import { predictManual, predictFile } from "../api/predictApi";
+import { predictManual} from "../api/predictApi";
 import { downloadReport } from "../api/reportApi";
 
 
@@ -23,7 +22,6 @@ export default function PatientInput() {
   const [step, setStep] = useState(1); // Start directly at manual input
   const [inputMode] = useState<'manual'>('manual');
   const [manualData, setManualData] = useState<any>(null);
-  const [labFile, setLabFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
   const [pred, setPred] = useState<any>(null);
   const [reportMsg, setReportMsg] = useState<string>("");
@@ -78,16 +76,15 @@ export default function PatientInput() {
             let reportPayload;
             if (inputMode === 'manual' && manualData && pred) {
               // Convert shap_values to a dictionary for backend PDF
-              let shapDict = {};
+
+              const shapDict: Record<string, number> = {};
               if (pred.features && pred.shap_values) {
                 pred.features.forEach((f: string, i: number) => {
                   shapDict[f] = pred.shap_values[i];
                 });
               }
               reportPayload = { ...manualData, ...pred, risk_score: pred.probability ?? pred.risk_score, shap_values: shapDict };
-            } else if (inputMode === 'file' && pred) {
-              reportPayload = { ...pred };
-            }
+            } 
             if (reportPayload) {
               try {
                 const reportRes = await downloadReport(reportPayload);
@@ -109,7 +106,7 @@ export default function PatientInput() {
         </button>
         <button
           className="w-full max-w-md py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-base font-bold rounded-xl shadow mt-2"
-          onClick={() => { setStep(1); setManualData(null); setLabFile(null); setPred(null); setReportMsg(""); }}
+          onClick={() => { setStep(1); setManualData(null); setPred(null); setReportMsg(""); }}
         >
           Start Over
         </button>

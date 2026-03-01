@@ -83,7 +83,7 @@ export default function ShapChart({ shap, features }: any) {
                   padding: 8
                 },
                 ticks: { 
-                  font: { size: 11, weight: "600" }, 
+                  font: { size: 11, weight: "bold" }, 
                   color: "#555",
                   callback: (value: any) => value.toFixed(2)
                 },
@@ -92,7 +92,7 @@ export default function ShapChart({ shap, features }: any) {
                 grid: { display: false },
                 title: { display: false },
                 ticks: { 
-                  font: { size: 11, weight: "600" }, 
+                  font: { size: 11, weight: "bold" }, 
                   color: "#444",
                   autoSkip: false,
                   maxRotation: 0,
