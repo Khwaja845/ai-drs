@@ -1,6 +1,8 @@
-import { api } from "./base";
+import axios from "axios";
+
+const API_URL = import.meta.env.VITE_API_URL?.replace(/\/$/, "");
 
 export const downloadReport = (data: any) =>
-  api.post("/report", data, {
+  axios.post(`${API_URL}/report`, data, {
     responseType: "blob",
   });
