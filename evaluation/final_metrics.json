@@ -1,0 +1,35 @@
+{
+    "model": "LightGBM (SMOTEENN)",
+    "accuracy": 0.946075,
+    "auc": 0.988572,
+    "f1_score": 0.955739,
+    "threshold": 0.5,
+    "samples_evaluated": 68057,
+    "classification_report": {
+        "0.0": {
+            "precision": 0.9024745799774044,
+            "recall": 0.9614085491322747,
+            "f1-score": 0.931009850364689,
+            "support": 25757.0
+        },
+        "1.0": {
+            "precision": 0.9755280909941405,
+            "recall": 0.9367375886524822,
+            "f1-score": 0.9557394051954944,
+            "support": 42300.0
+        },
+        "accuracy": 0.9460746139265616,
+        "macro avg": {
+            "precision": 0.9390013354857725,
+            "recall": 0.9490730688923785,
+            "f1-score": 0.9433746277800916,
+            "support": 68057.0
+        },
+        "weighted avg": {
+            "precision": 0.9478801005852469,
+            "recall": 0.9460746139265616,
+            "f1-score": 0.946380204176098,
+            "support": 68057.0
+        }
+    }
+}

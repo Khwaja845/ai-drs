@@ -1,0 +1,44 @@
+/* 1. Typography */
+h1, h2, h3, h4 {
+  margin: 0 0 0.5rem 0;
+  color: #1f2937; /* gray-800 */
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+/* 2. Layout & Containers */
+/* We keep .card for general wrappers, but make it Tailwind-compatible */
+.card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f3f4f6;
+}
+
+/* 3. Input Reset */
+/* This ensures inputs don't have ugly default borders, 
+   but we handle the width inside the components via Tailwind */
+input {
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* 4. Scrollbar Styling (Optional but makes it look Pro) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

@@ -1,0 +1,54 @@
+
+
+/* UnoCSS: Use utility classes directly in your markup. No @tailwind or @apply needed. */
+
+body {
+  background-color: #f1f5f9;
+}
+
+/* 1. Global Reset & Typography */
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #f1f5f9;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 2. Custom Utility Components (Optional) */
+/* We keep .card for general use, but use Tailwind for the rest */
+.card {
+  /* Example: Use UnoCSS utility classes in your markup instead of @apply here. */
+  background: #fff;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border: 1px solid #f3f4f6;
+}
+
+/* 3. Global Input Overrides */
+/* This ensures your number inputs don't have the ugly default arrows */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* 4. Button Fix */
+/* We remove the blue background so your ManualInputForm buttons 
+   can use their specific category colors (pink, green, red, etc.) */
+button {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
