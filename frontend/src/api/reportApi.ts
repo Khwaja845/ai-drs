@@ -1,3 +1,8 @@
 import axios from "axios";
-export const downloadReport = (data:any)=>
-  axios.post("http://127.0.0.1:8000/report",data,{responseType:"blob"});
+
+const API_URL = import.meta.env.VITE_API_URL;
+
+export const downloadReport = (data: any) =>
+  axios.post(`${API_URL}/report`, data, {
+    responseType: "blob",
+  });
