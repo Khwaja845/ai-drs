@@ -1,0 +1,2 @@
+Model,Accuracy (%),AUC-ROC (%),F1-Score (%)
+LightGBM (Proposed),94.61,98.86,95.57

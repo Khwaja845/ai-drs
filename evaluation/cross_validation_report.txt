@@ -1,0 +1,9 @@
+==========================================
+STRATIFIED 5-FOLD CROSS-VALIDATION REPORT
+==========================================
+Model: LightGBM (Final)
+Individual Fold Accuracies: [0.8104, 0.8084, 0.8107, 0.8118, 0.8109]
+Mean Accuracy: 81.04%
+Standard Deviation: 0.1100
+Final Metric: 81.04% (+/- 0.22%)
+==========================================

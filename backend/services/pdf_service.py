@@ -13,7 +13,17 @@ def generate_pdf_report(data: dict) -> bytes:
     c.setFont("Helvetica", 11)
     c.drawString(50, 770, f"Generated on: {datetime.now().strftime('%d-%m-%Y %H:%M')}")
 
-    y = 730
+    # Add Name and Mobile fields if present
+    y = 750
+    name = data.get("name", "")
+    mobile = data.get("mobile", "")
+    if name:
+        c.drawString(50, y, f"Name: {name}")
+        y -= 15
+    if mobile:
+        c.drawString(50, y, f"Mobile: {mobile} ")  # Add space after mobile number
+        y -= 60  # Big space before Prediction Summary
+
     c.setFont("Helvetica-Bold", 12)
     c.drawString(50, y, "Prediction Summary")
     y -= 20
